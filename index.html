@@ -78,6 +78,19 @@
   footer{padding:36px 0 60px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.8rem}
   footer .logo{font-size:1rem}
 
+
+  /* countdown */
+  .timer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:11px 15px;margin:0 0 18px}
+  .timer .lbl{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);font-weight:800}
+  .timer .clock{font-size:1.05rem;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
+  .timer .clock span{color:var(--muted);font-weight:500;font-size:.8rem;margin-right:8px}
+  /* headline bonus block */
+  .bonusblock{background:linear-gradient(135deg,rgba(255,59,31,.10),rgba(255,106,61,.05));border:1px solid var(--accent);border-radius:16px;padding:24px 22px;margin-top:6px}
+  .bonusblock .tag{display:inline-block;background:var(--accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.16em;padding:5px 12px;border-radius:6px;margin-bottom:14px}
+  .bonusblock h4{font-size:1.35rem;font-weight:800;line-height:1.25;margin-bottom:8px}
+  .bonusblock .why{color:var(--muted);font-size:.95rem;margin-bottom:12px}
+  .bonusblock p{font-size:.95rem;margin-bottom:10px}
+  .bonusblock .only{font-size:.85rem;color:var(--accent2);font-weight:700;margin-top:4px}
   .center{text-align:center}
   .sticky-cta{position:fixed;bottom:0;left:0;right:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(11,16,32,.92);backdrop-filter:blur(8px);border-top:1px solid var(--line);display:none}
   .sticky-cta .cta{padding:13px;font-size:.95rem;box-shadow:none}
@@ -101,12 +114,16 @@
     <h1>Everything I wish someone handed me on Day 1 — <span class="a">in one $9 bundle.</span></h1>
     <p class="sub">Nine plain-language guides covering the whole path to your first digital product income: create it, price it, sell it without a store, get traffic without going viral, and build an email list you actually own. No guru fluff. No "10k/month" promises. Just the starting path, in order.</p>
     <div class="price-row">
-      <span class="price-now">$9</span>
-      <span class="price-was">$27</span>
-      <span class="price-note">Founding price — goes up after launch week</span>
+      <span class="price-now" id="priceNow">$9</span>
+      <span class="price-was" id="priceWas">$17</span>
+      <span class="price-note" id="priceNote">Founding price — then it's $17</span>
     </div>
-    <a class="cta" href="https://yousefalky.gumroad.com/l/thebeginnerbundle">Get the Beginner Bundle — $9
-      <small>Instant download · 9 guides · free updates forever</small>
+    <div class="timer" id="timerBox">
+      <span class="lbl">Founding price ends in</span>
+      <span class="clock" id="clock">—</span>
+    </div>
+    <a class="cta" href="https://yousefalky.gumroad.com/l/thebeginnerbundle" id="ctaMain">Get the Beginner Bundle — <span class="ctaPrice">$9</span>
+      <small>Instant download · 9 guides + the filming bonus · free updates forever</small>
     </a>
     <p class="under-cta">If it doesn't give you a clear starting point, email me and I'll refund you. Simple as that.</p>
   </section>
@@ -123,7 +140,7 @@
 
   <!-- WHAT'S INSIDE -->
   <section>
-    <h2>What's inside — 9 guides, in the order you'll need them</h2>
+    <h2>What's inside — 9 guides + 1 bonus, in the order you'll need them</h2>
     <p class="lede">Each one is a standalone, plain-language guide with real screenshots and honest notes on what to ignore. Together they cover the whole path.</p>
 
     <h3 class="group">① Create your product</h3>
@@ -142,12 +159,20 @@
 
     <h3 class="group">④ Own your audience</h3>
     <div class="card"><b>Own Your Audience</b><span>Email marketing for beginners: free tools, lead magnets, your first welcome email, and selling without being gross.</span></div>
+    <h3 class="group">⑤ And the part nobody warns you about</h3>
+    <div class="bonusblock">
+      <span class="tag">BONUS</span>
+      <h4>Film Yourself Without Overthinking It</h4>
+      <p class="why">You'll finish your product, put it up for sale — and then hit the problem this bundle hadn't solved yet: you have to get on camera and talk about it.</p>
+      <p>16 mistakes that make beginner videos feel worse than they are, and the fix for each. The smudged lens. The window in the wrong place. Redoing a fumbled line instead of leaving it for the editor. Batching a week of videos without burning a whole day. Ends with a 60-second checklist you run before you press record.</p>
+      <p>Every one of them is a mistake I made filming myself daily — none of it is theory, and it's the only guide here written entirely from my own camera roll.</p>
+      <p class="only">Not sold separately. Only comes with the bundle.</p>
+    </div>
   </section>
 
   <!-- WHAT ELSE YOU GET -->
   <section class="bonus">
     <h2>What else you get</h2>
-    <div class="card"><span class="bonus-tag">BONUS</span><b>Film Yourself Without Overthinking It</b><span>A 10-page guide to the beginner filming mistakes that cost me weeks — and the five-minute fixes. Written entirely from my own camera roll, for anyone who'd rather show their face than hide it.</span></div>
     <div class="card"><span class="bonus-tag">FOREVER</span><b>Free updates, for life</b><span>I'm building this in public. When I learn something new and update a guide, you get the new version at no cost.</span></div>
     <div class="card"><span class="bonus-tag">DIRECT</span><b>Me, actually replying</b><span>Email me your questions and I'll answer personally. I'm still small enough to do that — and I'd rather get you unstuck than sell you another course.</span></div>
   </section>
@@ -158,6 +183,7 @@
     <p class="lede">Sold separately, guides like these go for $7–$15 each. I'm not going to pretend this is "worth $500." Here's the real math:</p>
     <div class="stack">
       <div class="row"><span>9 full guides</span><span>$63+ separately</span></div>
+      <div class="row"><span>Filming bonus guide</span><span>not sold separately</span></div>
       <div class="row"><span>All future updates</span><span>included</span></div>
       <div class="row"><span>Direct email access to me</span><span>included</span></div>
       <div class="total"><span>Founding price</span><span class="you">$9</span></div>
@@ -195,8 +221,8 @@
     <div class="center" style="margin-top:34px">
       <h2 style="margin-bottom:10px">You already know enough to start.</h2>
       <p class="lede" style="margin:0 auto 24px">Your first product is just helping the person one step behind you. Stop waiting to feel ready — start the messy first version this weekend, with me.</p>
-      <a class="cta" href="https://yousefalky.gumroad.com/l/thebeginnerbundle">Get the Beginner Bundle — $9
-        <small>Founding price · goes up after launch week</small>
+      <a class="cta" href="https://yousefalky.gumroad.com/l/thebeginnerbundle">Get the Beginner Bundle — <span class="ctaPrice">$9</span>
+        <small>Founding price · then it's $17</small>
       </a>
     </div>
   </section>
@@ -210,8 +236,40 @@
 </footer>
 
 <div class="sticky-cta">
-  <a class="cta" href="https://yousefalky.gumroad.com/l/thebeginnerbundle">Get the bundle — $9 founding price</a>
+  <a class="cta" href="https://yousefalky.gumroad.com/l/thebeginnerbundle">Get the bundle — <span class="ctaPrice">$9</span> founding price</a>
 </div>
 
+
+<script>
+(function(){
+  // 2 August 2026, 23:59:59 Cairo (UTC+3)
+  var END = Date.UTC(2026, 7, 2, 20, 59, 59);
+  var clock = document.getElementById('clock');
+  var box   = document.getElementById('timerBox');
+  function pad(n){ return (n<10?'0':'')+n; }
+  function expire(){
+    if(box) box.style.display='none';
+    var now = document.getElementById('priceNow');
+    var was = document.getElementById('priceWas');
+    var note= document.getElementById('priceNote');
+    if(now) now.textContent='$17';
+    if(was) was.style.display='none';
+    if(note) note.textContent='Standard price';
+    document.querySelectorAll('.ctaPrice').forEach(function(el){ el.textContent='$17'; });
+    document.querySelectorAll('.cta small').forEach(function(el){
+      el.textContent='Instant download · 9 guides + the filming bonus · free updates forever';
+    });
+  }
+  function tick(){
+    var d = END - Date.now();
+    if(d <= 0){ expire(); return; }
+    var s=Math.floor(d/1000), dd=Math.floor(s/86400), hh=Math.floor(s%86400/3600),
+        mm=Math.floor(s%3600/60), ss=s%60;
+    if(clock) clock.innerHTML = (dd>0? dd+'<span>d</span> ':'')+pad(hh)+'<span>h</span> '+pad(mm)+'<span>m</span> '+pad(ss)+'<span>s</span>';
+    setTimeout(tick, 1000);
+  }
+  tick();
+})();
+</script>
 </body>
 </html>
