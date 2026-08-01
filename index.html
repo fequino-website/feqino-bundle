@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Beginner Bundle — Feqino</title>
+<meta name="description" content="Nine plain-language guides covering the whole path to your first digital product income — built by a med student figuring it out in public. $9 founding price.">
+<style>
+  :root{
+    --bg:#0B1020; --bg2:#0E1526; --card:#121A30; --ink:#EEF1F7; --muted:#9AA3B5;
+    --accent:#FF3B1F; --accent2:#FF6A3D; --line:#1E2942; --good:#38B2A3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+  a{color:inherit}
+
+  /* header */
+  header{padding:18px 0;border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:baseline;gap:10px}
+  .logo{font-weight:800;font-size:1.35rem;color:var(--accent);letter-spacing:.5px}
+  .tagline{font-size:.7rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+
+  /* hero */
+  .hero{padding:56px 0 40px;text-align:left}
+  .eyebrow{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);border:1px solid var(--line);background:var(--bg2);padding:6px 12px;border-radius:999px;margin-bottom:20px}
+  h1{font-size:clamp(1.9rem,6vw,2.8rem);line-height:1.15;font-weight:800;margin-bottom:16px}
+  h1 .a{color:var(--accent)}
+  .sub{color:var(--muted);font-size:1.05rem;margin-bottom:28px;max-width:56ch}
+  .cta{display:block;width:100%;text-align:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:800;font-size:1.05rem;padding:16px 28px;border-radius:12px;box-shadow:0 8px 30px rgba(255,59,31,.35)}
+  .cta:active{transform:translateY(1px)}
+  .cta small{display:block;font-weight:500;font-size:.78rem;opacity:.85;margin-top:2px}
+  .under-cta{text-align:center;font-size:.8rem;color:var(--muted);margin-top:10px}
+
+  .price-row{display:flex;align-items:baseline;gap:12px;margin:0 0 18px}
+  .price-now{font-size:2.2rem;font-weight:800;color:var(--ink)}
+  .price-was{font-size:1.1rem;color:var(--muted);text-decoration:line-through}
+  .price-note{font-size:.8rem;color:var(--accent2);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+
+  /* sections */
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  h2{font-size:1.5rem;font-weight:800;margin-bottom:8px}
+  .lede{color:var(--muted);margin-bottom:26px;max-width:58ch}
+  h3.group{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin:26px 0 12px}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:12px}
+  .card b{display:block;font-size:1rem;margin-bottom:3px}
+  .card span{color:var(--muted);font-size:.92rem}
+
+  .story p{margin-bottom:16px;max-width:60ch}
+  .story .quiet{color:var(--muted)}
+
+  /* bonus */
+  .bonus .card{border-left:3px solid var(--good)}
+  .bonus-tag{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.1em;color:var(--good);border:1px solid var(--good);border-radius:999px;padding:2px 10px;margin-bottom:8px}
+
+  /* value stack */
+  .stack{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:26px 24px;margin-top:10px}
+  .stack .row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+  .stack .row:last-of-type{border-bottom:none}
+  .stack .row span:last-child{color:var(--muted);white-space:nowrap}
+  .stack .total{display:flex;justify-content:space-between;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-weight:800;font-size:1.05rem}
+  .stack .total .you{color:var(--accent)}
+
+  /* faq */
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:0}
+  summary{cursor:pointer;font-weight:700;padding:15px 18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::after{content:"+";color:var(--accent2);font-size:1.2rem;font-weight:400}
+  details[open] summary::after{content:"–"}
+  details p{padding:0 18px 15px;color:var(--muted);font-size:.94rem}
+
+  /* guarantee */
+  .guarantee{background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:20px 22px}
+  .guarantee b{color:var(--ink)}
+  .guarantee p{color:var(--muted);font-size:.95rem}
+
+  footer{padding:36px 0 60px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.8rem}
+  footer .logo{font-size:1rem}
+
+  .center{text-align:center}
+  .sticky-cta{position:fixed;bottom:0;left:0;right:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(11,16,32,.92);backdrop-filter:blur(8px);border-top:1px solid var(--line);display:none}
+  .sticky-cta .cta{padding:13px;font-size:.95rem;box-shadow:none}
+  @media(max-width:640px){.sticky-cta{display:block}body{padding-bottom:76px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="logo">Feqino</span>
+    <span class="tagline">The ultimate beginner roadmap</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" style="border-top:none">
+    <span class="eyebrow">Built by a medical student, in public 🤝</span>
+    <h1>Everything I wish someone handed me on Day 1 — <span class="a">in one $9 bundle.</span></h1>
+    <p class="sub">Nine plain-language guides covering the whole path to your first digital product income: create it, price it, sell it without a store, get traffic without going viral, and build an email list you actually own. No guru fluff. No "10k/month" promises. Just the starting path, in order.</p>
+    <div class="price-row">
+      <span class="price-now">$9</span>
+      <span class="price-was">$27</span>
+      <span class="price-note">Founding price — goes up after launch week</span>
+    </div>
+    <a class="cta" href="https://yousefalky.gumroad.com/l/thebeginnerbundle">Get the Beginner Bundle — $9
+      <small>Instant download · 9 guides · free updates forever</small>
+    </a>
+    <p class="under-cta">If it doesn't give you a clear starting point, email me and I'll refund you. Simple as that.</p>
+  </section>
+
+  <!-- STORY -->
+  <section class="story">
+    <h2>Why this exists</h2>
+    <p>I'm Yousef — a full-time medical student building online income from absolute zero, and documenting every step in public on <a href="https://instagram.com/feqino" style="color:var(--accent2)">@feqino</a>.</p>
+    <p>When I started, I had no audience, no experience, and no clue. So I did what most beginners do — I paid for courses. And even the paid ones assumed I already knew things I didn't. After all that money spent, I still couldn't answer one simple question: <b>what do I actually do first?</b></p>
+    <p>The problem was never a lack of information. It's that none of it was in order.</p>
+    <p>So I put the actual starting path into one place — the thing I wish someone had handed me on Day 1. And I'm keeping it cheap on purpose, because I remember exactly what it's like to want to start with no money.</p>
+    <p class="quiet">Still learning. Still figuring things out. But everything in here is the path I'm actually walking — not theory from someone selling a dream.</p>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section>
+    <h2>What's inside — 9 guides, in the order you'll need them</h2>
+    <p class="lede">Each one is a standalone, plain-language guide with real screenshots and honest notes on what to ignore. Together they cover the whole path.</p>
+
+    <h3 class="group">① Create your product</h3>
+    <div class="card"><b>Design Like You Know What You're Doing</b><span>A beginner's Canva crash course — account to export, free plan friendly. The design skills behind everything I sell.</span></div>
+    <div class="card"><b>Talk to ChatGPT Like a Person (Not Google)</b><span>How to actually get useful work out of AI — outlines, drafts, product descriptions — without robotic prompts.</span></div>
+
+    <h3 class="group">② Sell it — without a store</h3>
+    <div class="card"><b>Sell Without a Store</b><span>The exact no-storefront setup: Gumroad + a bio link + a few honest posts. Real screenshots for every screen.</span></div>
+    <div class="card"><b>Stop Guessing Your Price</b><span>What to charge, why, and how to raise it later — without guru math or fake scarcity.</span></div>
+    <div class="card"><b>Launch Without the Hype</b><span>A fillable checklist from idea to post-launch, so your first launch runs on a plan instead of panic.</span></div>
+
+    <h3 class="group">③ Get traffic that doesn't depend on going viral</h3>
+    <div class="card"><b>Sell Where People Already Search</b><span>Etsy + Pinterest for beginners — search engines with buyers inside, no face required.</span></div>
+    <div class="card"><b>Traffic That Doesn't Expire</b><span>The Pinterest playbook + planner. A pin can bring people in for months; a post dies in 48 hours.</span></div>
+    <div class="card"><b>Grow Without Showing Your Face</b><span>A calm week-by-week first month for a faceless Instagram page — from zero, around a real schedule.</span></div>
+
+    <h3 class="group">④ Own your audience</h3>
+    <div class="card"><b>Own Your Audience</b><span>Email marketing for beginners: free tools, lead magnets, your first welcome email, and selling without being gross.</span></div>
+  </section>
+
+  <!-- WHAT ELSE YOU GET -->
+  <section class="bonus">
+    <h2>What else you get</h2>
+    <div class="card"><span class="bonus-tag">FOREVER</span><b>Free updates, for life</b><span>I'm building this in public. When I learn something new and update a guide, you get the new version at no cost.</span></div>
+    <div class="card"><span class="bonus-tag">DIRECT</span><b>Me, actually replying</b><span>Email me your questions and I'll answer personally. I'm still small enough to do that — and I'd rather get you unstuck than sell you another course.</span></div>
+  </section>
+
+  <!-- VALUE STACK -->
+  <section>
+    <h2>The honest math</h2>
+    <p class="lede">Sold separately, guides like these go for $7–$15 each. I'm not going to pretend this is "worth $500." Here's the real math:</p>
+    <div class="stack">
+      <div class="row"><span>9 full guides</span><span>$63+ separately</span></div>
+      <div class="row"><span>All future updates</span><span>included</span></div>
+      <div class="row"><span>Direct email access to me</span><span>included</span></div>
+      <div class="total"><span>Founding price</span><span class="you">$9</span></div>
+    </div>
+    <p style="margin-top:14px;color:var(--muted);font-size:.9rem">Why so cheap? Because I was broke when I started and I remember it. I'd rather help a lot of people take the first step than price most of them out. The price rises after launch week — that part is real, not a countdown-timer trick.</p>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section>
+    <h2>This is for you if…</h2>
+    <div class="card"><span>You want to start earning online, but every guru makes it sound complicated and expensive.</span></div>
+    <div class="card"><span>You have very little time and even less money to spend on tools and courses.</span></div>
+    <div class="card"><span>You've got zero audience and zero experience — and you're tired of waiting to feel "ready."</span></div>
+    <div class="card"><span>You'd rather follow someone at your level, figuring it out in real time, than someone selling a highlight reel.</span></div>
+    <p style="margin-top:18px;color:var(--muted);font-size:.92rem"><b style="color:var(--ink)">It's not for you</b> if you're looking for overnight income, advanced scaling strategies, or someone to do the work for you. I can't promise money — nobody honestly can. I can hand you the path, in order.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <h2>Questions you might have</h2>
+    <details><summary>Do I need any experience?</summary><p>No. This is built for total beginners. If you've never made or sold anything online, you're exactly who it's for.</p></details>
+    <details><summary>Do I need an audience or followers?</summary><p>No. Several of the guides are specifically about starting with zero — and growing without showing your face if that's your thing.</p></details>
+    <details><summary>Do I need to pay for tools?</summary><p>No. The whole point is doing this on free tools — Canva free plan, Gumroad, free email platforms. I show you the exact free stack I use.</p></details>
+    <details><summary>How do I get it after I pay?</summary><p>Instantly. You get a download link right after checkout — all 9 guides as PDFs, yours to keep.</p></details>
+    <details><summary>Why is it so cheap?</summary><p>Because I remember being the person who couldn't afford the $497 course. This is priced so that "broke and starting" isn't a reason to wait.</p></details>
+    <details><summary>What if it's not for me?</summary><p>Email me and I'll refund you. I'd rather give your money back than have you feel like I wasted it.</p></details>
+  </section>
+
+  <!-- GUARANTEE + FINAL CTA -->
+  <section>
+    <div class="guarantee">
+      <b>The no-hard-feelings guarantee 🤝</b>
+      <p>Go through the bundle. If it honestly doesn't give you a clear starting point, email me at <a href="mailto:yousefalfeky@gmail.com" style="color:var(--accent2)">yousefalfeky@gmail.com</a> and I'll refund you. No forms, no "exit survey," no hard feelings.</p>
+    </div>
+    <div class="center" style="margin-top:34px">
+      <h2 style="margin-bottom:10px">You already know enough to start.</h2>
+      <p class="lede" style="margin:0 auto 24px">Your first product is just helping the person one step behind you. Stop waiting to feel ready — start the messy first version this weekend, with me.</p>
+      <a class="cta" href="https://yousefalky.gumroad.com/l/thebeginnerbundle">Get the Beginner Bundle — $9
+        <small>Founding price · goes up after launch week</small>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <span class="logo">Feqino</span><br>
+  Building online income from zero, in public · <a href="https://instagram.com/feqino" style="color:var(--accent2);text-decoration:none">@feqino</a><br>
+  <span style="display:inline-block;margin-top:8px">Questions? Email me — <a href="mailto:yousefalfeky@gmail.com" style="color:var(--accent2);text-decoration:none">yousefalfeky@gmail.com</a> · I read and answer every one myself.</span>
+</footer>
+
+<div class="sticky-cta">
+  <a class="cta" href="https://yousefalky.gumroad.com/l/thebeginnerbundle">Get the bundle — $9 founding price</a>
+</div>
+
+</body>
+</html>
